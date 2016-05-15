@@ -1,10 +1,35 @@
 
-$defBg:#11a251;
+$defBg: rgba(17, 162, 81, 0.55);
+$refBg: rgba(254, 246, 146, 0.55);
+$visionBg: rgba(78, 56, 216, 0.6);
+$trackBg: rgba(141, 36, 209, 0.57);
 
-.rich-markdown-content span.ext-definition {
-    background-color: $defBg;
-    padding:2px;
-    &:hover {
-        background-color:lighten($defBg,10);
+.rich-markdown-content span {
+    &.inner-link {
+        padding:2px;
+    }
+    &.ext-def {
+        background-color: $defBg;
+        &:hover {
+            background-color:lighten($defBg,10);
+        }
+    }
+    &.ext-vision{
+        background-color: $visionBg;
+        &:hover {
+            background-color:lighten($visionBg,10);
+        }
+    }
+    &.ext-track{
+        background-color: $trackBg;
+        &:hover {
+            background-color:lighten($trackBg,10);
+        }
+    }
+    &.ext-ref{
+        background-color: $refBg;
+        &:hover {
+            background-color:lighten($refBg,10);
+        }
     }
 }

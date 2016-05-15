@@ -6,8 +6,8 @@ export default function(){
         type: 'lang',
         regex: defRegex,
         replace: (regex,text,defId)=> {
-            this._tokens.def.push(defId);
-            return `<span class="ext-definition" data-definition-id="${defId}">${text}</span>`;
+            this._tokens.defs.push(defId);
+            return `<span class="inner-link ext-def" data-def-id="${defId}">${text}</span>`;
         }
     };
 }

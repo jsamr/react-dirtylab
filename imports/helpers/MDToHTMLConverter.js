@@ -1,4 +1,7 @@
 import defExt from './showdown-def-ext.js'
+import refExt from './showdown-ref-ext.js'
+import visionExt from './showdown-vision-ext.js'
+import trackExt from './showdown-track-ext.js'
 // import from npm causes following bug :
 // 'console is not defined' when meteor loads it
 import showdown from './../lib/showdown';
@@ -18,8 +21,7 @@ const showdownOpts={
     tablesHeaderId:false,
     ghCodeBlocks:true,
     tasklists:false,
-    smoothLivePreview:true,
-    extensions:[defExt]
+    smoothLivePreview:true
 };
 
 function highlight(str, lang) {
@@ -36,15 +38,23 @@ function highlight(str, lang) {
 
 class MDToHTMLConverter {
     convert(text){
-        return this._converter.makeHtml(text);
+        let html= this._converter.makeHtml(text);
+        return html;
     }
     constructor(prefix){
-        const boundDefExt=defExt.bind(this);
+        const boundDefExt=defExt.bind(this),
+              boundRefExt=refExt.bind(this),
+              boundVisionExt=visionExt.bind(this),
+              boundTrackExt=trackExt.bind(this);
+
         const impliedPrefix=prefix?`${prefix}_`:true;
-        const options=Object.assign({},showdownOpts,{prefixHeaderId:impliedPrefix,extensions:[boundDefExt]});
+        const options=Object.assign({},showdownOpts,{prefixHeaderId:impliedPrefix,extensions:[boundDefExt,boundRefExt,boundTrackExt,boundVisionExt]});
         this._converter=new showdown.Converter(options);
         this._tokens={
-            def:[]
+            defs:[],
+            refs:[],
+            tracks:[],
+            visions:[]
         }
     }
 }
