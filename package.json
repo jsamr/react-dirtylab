@@ -1,0 +1,15 @@
+{
+  "name": "md-editor-react",
+  "private": true,
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "highlight.js": "^9.3.0",
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.0.2",
+    "react-addons-pure-render-mixin": "^15.0.2",
+    "react-dom": "^15.0.2",
+    "showdown": "^1.4.0"
+  }
+}
