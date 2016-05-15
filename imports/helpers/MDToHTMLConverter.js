@@ -1,7 +1,7 @@
-
 import defExt from './showdown-def-ext.js'
-// import from npm causes bug
-import showdown from './showdown';
+// import from npm causes following bug :
+// 'console is not defined' when meteor loads it
+import showdown from './../lib/showdown';
 
 
 
