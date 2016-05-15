@@ -19,7 +19,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 
 autopublish             # Publish all data to the clients (for prototyping)
 insecure                # Allow all DB writes from clients (for prototyping)
-react-meteor-data
-fourseven:scss
-aldeed:collection2
-aldeed:simple-schema
+react-meteor-data       # React integration in meteor
+fourseven:scss          # scss transcompiler
+jagi:astronomy          # Powerful ODM (Object Document Mapping), aka ORM for relational databases
