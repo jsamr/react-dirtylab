@@ -24,10 +24,16 @@
 
 ## [La meilleure introduction à ES6 : *You don't know JS : ES6*](https://github.com/getify/You-Dont-Know-JS/blob/master/es6%20&%20beyond/ch8.md)
 
+## [Material + React](http://www.material-ui.com/)
+
 
 # Sécurité 
 
 ## Markdown and XSS security vulnerability [Lien 1](https://michelf.ca/blog/2010/markdown-and-xss/) [Lien 2](https://github.com/showdownjs/showdown/wiki/Markdown's-XSS-Vulnerability-%28and-how-to-mitigate-it%29)
+
+# Tutoriels annexes
+
+## [React + D3.js](http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/)
 
 # Modèles de révision 
 

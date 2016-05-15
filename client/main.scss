@@ -1,0 +1,10 @@
+
+$defBg:#11a251;
+
+.rich-markdown-content span.ext-definition {
+    background-color: $defBg;
+    padding:2px;
+    &:hover {
+        background-color:lighten($defBg,10);
+    }
+}

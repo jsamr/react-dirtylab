@@ -1,12 +1,21 @@
 import React, { Component } from 'react';
 import CommentBox from './CommentBox.jsx'
 import { createContainer } from 'meteor/react-meteor-data';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import comments from '../api/comments.js';
+import CustomAppBar from '../ui/CustomAppBar.jsx';
+import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
 class App extends Component {
     render(){
         return (
-            <CommentBox data={this.props.data}/>
+            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+                <div>
+                    <CustomAppBar/>
+                    <CommentBox data={this.props.data}/>
+                </div>
+            </MuiThemeProvider>
         );
     }
 }

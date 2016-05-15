@@ -1,16 +1,17 @@
 import React, { Component } from 'react';
 import RichMarkdownBlock from './RichMarkdownBlock.jsx';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 export default class Comment extends Component {
 
     render(){
         return (
-            <div className='comment'>
-                <h2 className='commentAuthor'>
-                    {this.props.author}
-                </h2>
-                <RichMarkdownBlock stream={this.props.text.toString()} headerPrefix={this.props._id}/>
-            </div>
+            <Card >
+                <CardHeader title={this.props.author}  />
+                <CardText>
+                    <RichMarkdownBlock stream={this.props.text.toString()} headerPrefix={this.props._id}/>
+                </CardText>
+            </Card>
         );
     }
 
