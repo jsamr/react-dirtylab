@@ -35,8 +35,15 @@
 
 ## [React + D3.js](http://nicolashery.com/integrating-d3js-visualizations-in-a-react-app/)
 
-# Modèles de révision 
+# Ressources annexes
+
+## Modèles de révision 
 
 - [MediaWiki revision table](https://www.mediawiki.org/wiki/Manual:Revision_table)
 - [SO question](http://stackoverflow.com/questions/1219608/how-does-one-store-history-of-edits-effectively)
 - [modèle BDD MediaWiki](https://upload.wikimedia.org/wikipedia/commons/f/f7/MediaWiki_1.24.1_database_schema.svg)
+
+## Standards de références 
+
+- [Standard académique pour citer des oeuvres - MLA Standard](https://en.wikipedia.org/wiki/MLA_Handbook_for_Writers_of_Research_Papers)
+- [EasyLib - Assistant pour générer des citations automatiquement](http://www.easybib.com/cite/)
