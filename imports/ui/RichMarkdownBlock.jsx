@@ -14,7 +14,6 @@ export default class RichMarkdownBlock extends React.Component {
 
     constructor(props){
         super(props);
-        console.info(props);
         this._mDToHTMLConv=new MDToHTMLConverter(props.headerPrefix);
     }
 }
