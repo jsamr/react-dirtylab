@@ -12,6 +12,7 @@
     "react-addons-pure-render-mixin": "^15.0.2",
     "react-dom": "^15.0.2",
     "react-tap-event-plugin": "^1.0.0",
-    "showdown": "^1.4.0"
+    "showdown": "^1.4.0",
+    "validator": "^5.2.0"
   }
 }

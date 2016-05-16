@@ -1,35 +1,53 @@
 
-$defBg: rgba(17, 162, 81, 0.55);
-$refBg: rgba(254, 246, 146, 0.55);
-$visionBg: rgba(78, 56, 216, 0.6);
-$trackBg: rgba(141, 36, 209, 0.57);
+$defBg: rgba(17, 232, 138, 0.55);
+$refBg: rgba(254, 246, 146, 0.84);
+$visionBg: rgba(80, 57, 244, 0.45);
+$trackBg: rgba(5, 98, 244, 0.3);
 
-.rich-markdown-content span {
-    &.inner-link {
-        padding:2px;
+.topBar {
+    position:fixed;
+}
+
+.rich-markdown-content {
+    span.react-mark-mount {
+        display: inline-block;
     }
-    &.ext-def {
-        background-color: $defBg;
-        &:hover {
-            background-color:lighten($defBg,10);
+    mark {
+        &.inner-link {
+            padding:0.5px 4px;
+            box-sizing: border-box;
+            border:1px solid transparent;
+            &:hover {
+                border:1px solid gray;
+            }
+        }
+        &.ext-def {
+            background-color: $defBg;
+            &:hover {
+                background-color:darken($defBg,20);
+            }
+        }
+        &.ext-vision{
+            background-color: $visionBg;
+            &:hover {
+                background-color:darken($visionBg,10);
+            }
+        }
+        &.ext-track{
+            background-color: $trackBg;
+            &:hover {
+                background-color:darken($trackBg,20);
+            }
+        }
+        &.ext-ref{
+            background-color: $refBg;
+            &:hover {
+                background-color:darken($refBg,10);
+            }
         }
     }
-    &.ext-vision{
-        background-color: $visionBg;
-        &:hover {
-            background-color:lighten($visionBg,10);
-        }
-    }
-    &.ext-track{
-        background-color: $trackBg;
-        &:hover {
-            background-color:lighten($trackBg,10);
-        }
-    }
-    &.ext-ref{
-        background-color: $refBg;
-        &:hover {
-            background-color:lighten($refBg,10);
-        }
-    }
+}
+
+body {
+    margin:0;
 }

@@ -10,10 +10,12 @@ import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 class App extends Component {
     render(){
         return (
-            <MuiThemeProvider muiTheme={getMuiTheme(darkBaseTheme)}>
+            <MuiThemeProvider muiTheme={getMuiTheme()}>
                 <div>
                     <CustomAppBar/>
-                    <CommentBox data={this.props.data}/>
+                    <main>
+                        <CommentBox data={this.props.data}/>
+                    </main>
                 </div>
             </MuiThemeProvider>
         );
