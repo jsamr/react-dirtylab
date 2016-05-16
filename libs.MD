@@ -12,7 +12,11 @@
 
 ## [Editeur CodeMirror](https://codemirror.net/doc/manual.html#api) et son [intégration react](https://github.com/JedWatson/react-md-editor)
 
+## [Générateur déclaratif de diagrammes](https://github.com/knsv/mermaid), [Live demo](http://knsv.github.io/mermaid/live_editor/) et 
+
 ## [Critic Markup](http://criticmarkup.com/)
+
+## [Liste de 10 libs pour déssiner diagrammes en JS](http://modeling-languages.com/javascript-drawing-libraries-diagrams/)
 
 # Lectures & Tutoriels recommandées 
 
@@ -48,3 +52,24 @@
 
 - [Standard académique pour citer des oeuvres - MLA Standard](https://en.wikipedia.org/wiki/MLA_Handbook_for_Writers_of_Research_Papers)
 - [EasyLib - Assistant pour générer des citations automatiquement](http://www.easybib.com/cite/)
+
+# Éléments doms intéressants
+
+## Balises
+
+- abbr 
+- address
+- article & section
+- cite
+- dfn
+- figure & figcaption
+- ins & del & s & u
+- mark
+- q & blockquote
+- time
+
+## Global attributes
+
+- spellcheck
+- 
+
