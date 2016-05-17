@@ -4,7 +4,7 @@ import { Mongo } from 'meteor/mongo';
 
 // cc stands for collaborative content
 const CcVisions = new Mongo.Collection('cc.visions');
-const CcVision  = CollaborativeContentPaper.extend({
+const CcVision  = CollaborativeContentPaper.inherit({
     name:'CcVision',
     collection:CcVisions
 });

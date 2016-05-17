@@ -4,7 +4,7 @@ import { Mongo } from 'meteor/mongo';
 
 // cc stands for collaborative content
 const CcReferences = new Mongo.Collection('cc.references');
-const CcReference = CollaborativeContentPaper.extend({
+const CcReference = CollaborativeContentPaper.inherit({
     name:'CcReference',
     collection:CcReferences,
     fields:{

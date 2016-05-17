@@ -8,15 +8,25 @@ const CcChapter = Class.create({
     name:'CcChapter',
     collection:CcChapters,
     fields:{
-        name:{
+        title:{
             type:String,
             validators:[{
                 type:'minLength',
-                param:5
+                param:3
             },{
                 type:'maxWords',
                 param:50
             }]
+        }
+    },
+    indexes:{
+        title:{
+            fields:{
+                title:1
+            },
+            options:{
+                unique:true
+            }
         }
     }
 });

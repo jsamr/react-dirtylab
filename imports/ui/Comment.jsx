@@ -9,7 +9,7 @@ export default class Comment extends Component {
             <Card >
                 <CardHeader title={this.props.author}  />
                 <CardText>
-                    <RichMarkdownBlock stream={this.props.text.toString()} headerPrefix={this.props._id}/>
+                    <RichMarkdownBlock markdown={this.props.text.toString()} headerPrefix={this.props._id}/>
                 </CardText>
             </Card>
         );

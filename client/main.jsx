@@ -1,13 +1,13 @@
 import React from 'react';
 import validate from '../imports/validation/validate';
 import { Meteor } from 'meteor/meteor';
-import { render } from 'react-dom';
-import App from '../imports/ui/App.jsx';
+import ReactDOM from 'react-dom';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import AppRouter from '../imports/ui/AppRouter.jsx';
 
 Meteor.startup(() => {
   injectTapEventPlugin();
-  render(<App />, document.getElementById('target'));
+  ReactDOM.render(<AppRouter></AppRouter>, document.getElementById('application'));
 
 });
 

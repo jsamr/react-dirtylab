@@ -1,6 +1,6 @@
 
 $defBg: rgba(17, 232, 138, 0.55);
-$refBg: rgba(254, 246, 146, 0.84);
+$refBg: rgba(185, 177, 95, 0.84);
 $visionBg: rgba(80, 57, 244, 0.45);
 $trackBg: rgba(5, 98, 244, 0.3);
 
@@ -17,31 +17,34 @@ $trackBg: rgba(5, 98, 244, 0.3);
             padding:0.5px 4px;
             box-sizing: border-box;
             border:1px solid transparent;
+            color:whitesmoke;
+            font-weight: 600;
+            border-radius: 3px;
             &:hover {
                 border:1px solid gray;
             }
         }
         &.ext-def {
             background-color: $defBg;
-            &:hover {
+            &.hovered {
                 background-color:darken($defBg,20);
             }
         }
         &.ext-vision{
             background-color: $visionBg;
-            &:hover {
+            &.hovered {
                 background-color:darken($visionBg,10);
             }
         }
         &.ext-track{
             background-color: $trackBg;
-            &:hover {
+            &.hovered {
                 background-color:darken($trackBg,20);
             }
         }
         &.ext-ref{
             background-color: $refBg;
-            &:hover {
+            &.hovered {
                 background-color:darken($refBg,10);
             }
         }
