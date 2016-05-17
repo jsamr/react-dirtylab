@@ -18,6 +18,8 @@
 
 ## [Liste de 10 libs pour déssiner diagrammes en JS](http://modeling-languages.com/javascript-drawing-libraries-diagrams/)
 
+## [Composition de documents](https://atmospherejs.com/reywood/publish-composite)
+
 # Lectures & Tutoriels recommandées 
 
 ## [Installation de Meteor](https://www.meteor.com/install)
@@ -35,6 +37,10 @@
 # Sécurité 
 
 ## Markdown and XSS security vulnerability [Lien 1](https://michelf.ca/blog/2010/markdown-and-xss/) [Lien 2](https://github.com/showdownjs/showdown/wiki/Markdown's-XSS-Vulnerability-%28and-how-to-mitigate-it%29)
+
+# Test
+
+## [React router testing](https://github.com/reactjs/react-router/blob/master/docs/guides/testing.md)
 
 # Tutoriels annexes
 
