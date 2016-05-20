@@ -22,3 +22,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 react-meteor-data       # React integration in meteor
 fourseven:scss          # scss transcompiler
 jagi:astronomy          # Powerful ODM (Object Document Mapping), aka ORM for relational databases
+konecty:mongo-counter   # User friendly _id for mongo

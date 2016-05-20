@@ -1,32 +1,34 @@
 import React from 'react';
-import MDToHTMLConverter from '../markdown/MDToHTMLConverter.js';
+import MDToHTMLConverter from '../../markdown/MDToHTMLConverter.js';
 import ReactDOM from 'react-dom';
-import collaborativeContentsHovers from '../markdown/collaborativeContentsHovers';
+import collaborativeContentsHovers from '../../markdown/collaborativeContentsHovers';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getTheme from '../helpers/getTheme';
+import getTheme from '../../conf/getTheme';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 
 class RichMarkdownBlock extends React.Component {
     /**
      * Mount MarkHover to each marked element in the text.
      */
-    componentDidMount(){
+    mountHovers(){
         let $this = $(ReactDOM.findDOMNode(this));
         this._mDToHTMLConv.tokens.forEach((ids,ccType)=> {
             let HoverComponent = collaborativeContentsHovers[ccType].markHover;
-            ids.forEach((id)=>
+            ids.forEach((id)=> {
                 //TODO Benchmark this selector
                 $($this).find(`span.react-mark-mount[data-ccType="${ccType}"][data-id="${id}"]`).each((index,el)=> {
-                    this.states.elements.push(el);
-                    ReactDOM.render(
-                        <MuiThemeProvider muiTheme={getMuiTheme()}>
-                            <HoverComponent ccType={ccType} id={id}>
-                                {$(el).text()}
-                            </HoverComponent>
-                        </MuiThemeProvider>
-                        , el)
-                    }
-                ))});
+                            this.states.elements.push(el);
+                            ReactDOM.render(
+                                <MuiThemeProvider muiTheme={getMuiTheme()}>
+                                    <HoverComponent ccType={ccType} id={id}>
+                                        {$(el).text()}
+                                    </HoverComponent>
+                                </MuiThemeProvider>
+                                , el)
+                        }
+                    )
+                }
+            )});
     }
 
     /**
@@ -51,7 +53,9 @@ class RichMarkdownBlock extends React.Component {
         this._mDToHTMLConv=new MDToHTMLConverter(props.headerPrefix);
         this.states={
             elements:[]
-        }
+        };
+        this.componentDidUpdate=this.mountHovers.bind(this);
+        this.componentDidMount=this.mountHovers.bind(this);
     }
 }
 

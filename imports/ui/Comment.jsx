@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RichMarkdownBlock from './RichMarkdownBlock.jsx';
+import RichMarkdownBlock from './utils/RichMarkdownBlock.jsx';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 export default class Comment extends Component {

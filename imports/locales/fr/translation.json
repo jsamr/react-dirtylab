@@ -1,0 +1,9 @@
+{
+  "cc":{
+    "def":"définition",
+    "def_plural":"définitions"
+  },
+  "actions":{
+    "cancel":"annuler"
+  }
+}

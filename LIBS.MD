@@ -20,6 +20,11 @@
 
 ## [Composition de documents](https://atmospherejs.com/reywood/publish-composite)
 
+## [Simple React Form](https://github.com/nicolaslopezj/simple-react-form)
+
+## [React lazy load](https://www.npmjs.com/package/react-lazy-load)
+
+
 # Lectures & Tutoriels recommandées 
 
 ## [Installation de Meteor](https://www.meteor.com/install)
@@ -33,6 +38,7 @@
 ## [Material + React](http://www.material-ui.com/)
 
 ## [Meteor + React + Astronomy](https://github.com/JesperWe/simple-todos-react-astro)
+
 
 # Sécurité 
 

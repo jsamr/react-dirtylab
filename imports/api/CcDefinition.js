@@ -2,12 +2,14 @@ import { Class } from 'meteor/jagi:astronomy';
 import CollaborativeContentPaper from './CollaborativeContentPaper';
 import CcChapter from './CcChapter';
 import { Mongo } from 'meteor/mongo';
-
 // cc stands for collaborative content
 const CcDefinitions = new Mongo.Collection('cc.definitions');
 
+
+const name = 'CcDefinition';
+
 const CcDefinition=Class.create({
-    name:'CcDefinition',
+    name,
     collection:CcDefinitions,
     fields:{
         entry:{

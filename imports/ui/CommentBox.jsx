@@ -12,7 +12,7 @@ class InnerCommentBox extends Component {
         return (
             <Paper>
                 <h1>Commentaires</h1>
-                <CommentList data={this.props.data}/>
+                <CommentList comments={this.props.comments}/>
                 <CommentForm/>
             </Paper>
         );
@@ -26,7 +26,7 @@ InnerCommentBox.propTypes = {
 const CommentBox = createContainer(() => {
     Meteor.subscribe('comments');
     return {
-        data: comments.find({}).fetch()
+        comments: comments.find({}).fetch()
     };
 }, InnerCommentBox );
 

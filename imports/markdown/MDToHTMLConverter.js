@@ -41,7 +41,7 @@ export default class MDToHTMLConverter {
             extensions
         });
         this._converter=new showdown.Converter(options);
-        this.tokens=new Map(markExtensions.map((ext)=>[ext.ccType,[]]));
+        this.tokens=new Map(markExtensions.map((ext)=>[ext.ccType,new Set([])]));
     }
 }
 

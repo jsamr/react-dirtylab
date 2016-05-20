@@ -27,11 +27,14 @@ export default class MarkHover extends React.Component {
             <Popover
                 open={this.state.open}
                 anchorEl={this.state.anchorEl}
-                anchorOrigin={{horizontal: 'left', vertical: 'top'}}
-                targetOrigin={{horizontal: 'right', vertical: 'top'}}
+                anchorOrigin={{horizontal: 'middle', vertical: 'bottom'}}
+                targetOrigin={{horizontal: 'middle', vertical: 'top'}}
                 useLayerForClickAway={false}
+                autoCloseWhenOffScreen={false}
                 onRequestClose={this.handleRequestClose.bind(this)}>
-                TROLOLOLOLOLOLOLOLO
+                <div className='inner-mark-hover'>
+                    {this.props.innerElement}
+                </div>
             </Popover>
         </mark>
         );
@@ -47,5 +50,11 @@ export default class MarkHover extends React.Component {
 }
 
 MarkHover.propTypes={
-    ccType:React.PropTypes.oneOf(ccTypes).isRequired
+    ccType:React.PropTypes.oneOf(ccTypes).isRequired,
+    id:React.PropTypes.string.isRequired,
+    innerElement:React.PropTypes.node
+};
+
+MarkHover.defaultProps= {
+    innerElement: 'Warning : forgot to include inner Element. Hover is empty'
 };

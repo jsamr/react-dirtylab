@@ -1,4 +1,5 @@
 import MarkHover from '../ui/marks/MarkHover.jsx';
+import DefinitionMarkHover from '../ui/marks/DefinitionMarkHover.jsx';
 import {defMarkExtension,refMarkExtension,trackMarkExtension,visionMarkExtension} from './markExtensions';
 import CcDefinition from '../api/CcDefinition';
 import CcTrack from '../api/CcTrack';
@@ -9,7 +10,7 @@ export default collaborativeContentsHovers = {
     def:{
         extension:defMarkExtension,
         class:CcDefinition,
-        markHover:MarkHover
+        markHover:DefinitionMarkHover
     },
     ref:{
         extension:refMarkExtension,

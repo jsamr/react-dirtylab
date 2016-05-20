@@ -4,7 +4,6 @@ import comments from '../api/comments.js';
 class CommentForm extends Component {
 
     handleAuthorChange(e) {
-        console.warn(this);
         this.setState({'author':e.target.value});
     }
     handleTextChange(e){
