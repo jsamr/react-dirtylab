@@ -3,7 +3,8 @@ import TextField from 'material-ui/TextField';
 import RichMarkdownBlock from '../utils/RichMarkdownBlock';
 import {CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
-export default class LivePreviewMdInput extends Component{
+
+class LivePreviewMdInput extends Component{
     constructor(props){
         super(props);
         this.state={
@@ -20,7 +21,7 @@ export default class LivePreviewMdInput extends Component{
     render(){
 
         return (
-            <Paper style={{display:'flex',width:'100%',flexDirection:'row', flexWrap:'nowrap', alignItems:'stretch'}}>
+            <Paper style={{display:'flex',width:'100%',flexDirection:'row', flexWrap:'nowrap', alignItems:'stretch', background:'black'}}>
                 <div style={{flexBasis:'50%',background:'black',padding:10}}>
                     <TextField
                         hintText="Rédigez en markdown"
@@ -32,8 +33,8 @@ export default class LivePreviewMdInput extends Component{
                     />
                 </div>
                 <div style={{flexBasis:'50%'}}>
-                    <CardText>
-                        <RichMarkdownBlock markdown={this.state.markdown}/>
+                    <CardText style={{background:'black'}}>
+                        <RichMarkdownBlock style={{background:'black'}} markdown={this.state.markdown}/>
                     </CardText>
                 </div>
             </Paper>
@@ -54,3 +55,5 @@ LivePreviewMdInput.defaultProps={
     markdown:'',
     onChange:()=> null
 };
+
+export default LivePreviewMdInput;

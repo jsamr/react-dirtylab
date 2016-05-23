@@ -31,7 +31,9 @@ export default class MarkHover extends React.Component {
                 targetOrigin={{horizontal: 'middle', vertical: 'top'}}
                 useLayerForClickAway={false}
                 autoCloseWhenOffScreen={false}
-                onRequestClose={this.handleRequestClose.bind(this)}>
+                onRequestClose={this.handleRequestClose.bind(this)}
+                onMouseOut={this.handleRequestClose.bind(this)}
+            >
                 <div className='inner-mark-hover'>
                     {this.props.innerElement}
                 </div>
