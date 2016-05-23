@@ -45,7 +45,7 @@ class RichMarkdownBlock extends React.Component {
     }
 
     render(){
-        return <div dangerouslySetInnerHTML={this.renderMD()} className='rich-markdown-content'></div>
+        return <div style={this.props.style} dangerouslySetInnerHTML={this.renderMD()} className='rich-markdown-content'></div>
     }
 
     constructor(props){
@@ -61,7 +61,12 @@ class RichMarkdownBlock extends React.Component {
 
 RichMarkdownBlock.propTypes={
     markdown:React.PropTypes.string.isRequired,
-    headerPrefix:React.PropTypes.string
+    headerPrefix:React.PropTypes.string,
+    style:React.PropTypes.object
+};
+
+RichMarkdownBlock.defaultProps={
+    style:{}
 };
 
 export default RichMarkdownBlock;
