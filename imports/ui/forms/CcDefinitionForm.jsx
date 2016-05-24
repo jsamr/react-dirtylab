@@ -4,10 +4,10 @@ import TextField from 'material-ui/TextField';
 import CcDefinition from '../../api/CcDefinition';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { formTheme } from '../../conf/themes';
 export default class CcDefinitionForm extends Component {
-
-
-    setEntry(props,val){
+    setEntry(props, val){
         this.props.ccDefinition.entry=val;
     }
     saveDefinition(){
@@ -19,17 +19,23 @@ export default class CcDefinitionForm extends Component {
     }
     render(){
         return (
-            <div className="ccDefinitionForm">
-                <div style={{padding:10,background:'black'}}>
-                    <TextField hintText="Max 40 car" floatingLabelText="Mot à définir" onChange={this.setEntry.bind(this)} fullWidth={true}/>
+            <MuiThemeProvider muiTheme={ formTheme }>
+                <div className="ccDefinitionForm">
+                    <div style={{padding:10}}>
+                        <TextField hintText="Max 40 lettres" style={{fontSize:30,textAlign:'center'}} floatingLabelText="Mot à définir" onChange={this.setEntry.bind(this)} fullWidth={true}/>
+                    </div>
+                    <LivePreviewMDInput numberOfRows={3} inputName='Résumé' onChange={(val)=>this.props.ccDefinition.succinct_md=val}/>
+                    <LivePreviewMDInput numberOfRows={5} inputName='Détaillé' onChange={(val)=>this.props.ccDefinition.detailed_md=val}/>
+                    <Toolbar >
+                        <ToolbarGroup>
+                            <RaisedButton label='Sauvegarder' primary={true} onMouseUp={this.saveDefinition.bind(this)} onTouchEnd={this.saveDefinition.bind(this)} />
+                        </ToolbarGroup>
+                        <ToolbarGroup>
+                            <RaisedButton label='Annuler' p onMouseUp={this.cancel.bind(this)} onTouchEnd={this.cancel.bind(this)} />
+                        </ToolbarGroup>
+                    </Toolbar>
                 </div>
-                <LivePreviewMDInput numberOfRows={3} inputName='Résumé' onChange={(val)=>this.props.ccDefinition.succinct_md=val}/>
-                <LivePreviewMDInput numberOfRows={5} inputName='Détaillé' onChange={(val)=>this.props.ccDefinition.detailed_md=val}/>
-                <Toolbar >
-                    <RaisedButton label='Sauvegarder' primary={true} onMouseUp={this.saveDefinition.bind(this)} onTouchEnd={this.saveDefinition.bind(this)} />
-                    <RaisedButton label='Annuler' p onMouseUp={this.cancel.bind(this)} onTouchEnd={this.cancel.bind(this)} />
-                </Toolbar>
-            </div>
+            </MuiThemeProvider>
         )
     }
 }

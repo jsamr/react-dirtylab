@@ -10,10 +10,9 @@ import LazyLoader from '../utils/LazyLoader.jsx';
 class DefinitionMarkHover extends Component {
 
     render(){
-        const id=this.props.id;
+        const _id=this.props._id;
         const loader = ()=>{
-            console.info("I'm fucking loading");
-            const ccDefinition=CcDefinition.findOne({_id:id});
+            const ccDefinition=CcDefinition.findOne({_id});
             return {
                 ccDefinition,
                 forceExpand:true
@@ -23,7 +22,7 @@ class DefinitionMarkHover extends Component {
 
         return (
             <MarkHover
-                id={this.props.id}
+                _id={this.props._id}
                 ccType={this.props.ccType}
                 innerElement={innerElement} >
                 {this.props.children}

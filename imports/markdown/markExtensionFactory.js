@@ -7,7 +7,7 @@
 export default function(ccType){
     const extension = function(){
         // ~D is the pre-converted '$' sign processed by showdown.
-        const regex=new RegExp(`~D${ccType}\\{(.+):[ ]*(\\S+?)[ ]*\\}`,'g');
+        const regex=new RegExp(`~D${ccType}\\{(.+?):[ ]*(\\S+?)[ ]*\\}`,'g');
         return {
             type: 'lang',
             regex,

@@ -1,4 +1,4 @@
-import {Router, Route, IndexRoute} from 'react-router';
+import {Router, Route, IndexRoute, IndexRedirect} from 'react-router';
 import CommentBox from '../CommentBox.jsx';
 import CcDefinitionsPage from '../pages/CcDefinitionsPage.jsx';
 import CcDefinitionPage from '../pages/CcDefinitionPage.jsx';
@@ -15,6 +15,7 @@ const ccRoot='cc',
  * This is a way to make route refactoring easy
  */
 export const routes = {
+    comments:new RouteP('/comments'),
     cc:{
         definitions:{
             $root:new RouteP(`/${ccRoot}/${defRoot}`),
@@ -29,10 +30,11 @@ export default class AppRouter extends Component {
         return (
             <Router history={history}>
                 <Route path='/' component={App}>
-                    <IndexRoute component={CommentBox} />
+                    <IndexRedirect to={routes.comments.spec} />
                     <Route path={routes.cc.definitions.$root.spec} component={CcDefinitionsPage}/>
-                    <Route path={routes.cc.definitions.new.spec} component={NewCcDefinitionPage}/>
-                    <Route path={routes.cc.definitions.view.spec} component={CcDefinitionPage}/>
+                    <Route path={routes.cc.definitions.new.spec}   component={NewCcDefinitionPage}/>
+                    <Route path={routes.cc.definitions.view.spec}  component={CcDefinitionPage}/>
+                    <Route path={routes.comments.spec}             component={CommentBox}/>
                 </Route>
             </Router>
         )

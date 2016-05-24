@@ -3,6 +3,10 @@ import CcDefinition from '../api/CcDefinition';
 import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 import Paper from 'material-ui/Paper';
 import RichMarkdownBlock from './utils/RichMarkdownBlock.jsx';
+import { ccThemes } from '../conf/themes';
+
+const paddingHorz=16,
+      paddingVert=5;
 
 export default class CcDefinitionView extends Component {
 
@@ -23,8 +27,13 @@ export default class CcDefinitionView extends Component {
                             title={this.props.ccDefinition.entry}
                             subtitle={`#${this.props.ccDefinition._id}`}
                             showExpandableButton={optionalDetailed!=null&&!this.props.forceExpand}
+                            style={Object.assign({padding:`${paddingVert}px ${paddingHorz}px`},ccThemes.def)}
+                            titleColor={ccThemes.def.color}
+                            subtitleColor={ccThemes.def.color}
                         />
-                        <CardText >
+                        <CardText
+                            style={{padding:`${paddingVert}px ${paddingHorz}px`}}
+                        >
                             <dfn title={this.props.ccDefinition.entry}>
                                 <RichMarkdownBlock markdown={this.props.ccDefinition.succinct_md}/>
                             </dfn>
@@ -37,6 +46,7 @@ export default class CcDefinitionView extends Component {
     }
 
     render(){
+        console.info(this.context);
         if(this.props.ccDefinition!==undefined) return this.renderIfDefined();
         else return this.renderIfUndefined();
     }

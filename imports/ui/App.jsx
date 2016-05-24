@@ -1,21 +1,28 @@
 import React, { Component } from 'react';
 import CustomAppBar from '../ui/CustomAppBar.jsx';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getTheme from '../conf/getTheme';
-
-const theme=getTheme();
+import { applicationTheme, formTheme, hoverMarkTheme, ccThemes } from '../conf/themes';
 
 export default class App extends Component {
+    getChildContext() {
+        return {
+            appTheme:applicationTheme,
+            ccThemes:ccThemes
+        };
+    }
     render(){
         return (
-            <MuiThemeProvider muiTheme={theme}>
-                <div>
+            <MuiThemeProvider muiTheme={applicationTheme}>
+                <div style={{background:applicationTheme.palette.windowBackground}}>
                     <CustomAppBar/>
-                    <main style={{marginTop:theme.appBar.height+10,marginLeft:10,marginRight:10}}>
-                        {this.props.children}
-                    </main>
+                    {this.props.children}
                 </div>
             </MuiThemeProvider>
         );
     }
 }
+
+App.childContextTypes = {
+    appTheme: React.PropTypes.object.isRequired,
+    ccThemes: React.PropTypes.object.isRequired
+};

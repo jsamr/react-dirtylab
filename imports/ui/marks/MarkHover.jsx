@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { ccTypes } from '../../markdown/markExtensions';
 import Popover from 'material-ui/Popover';
 
+const markHoverMaxHeight=350;
+
 export default class MarkHover extends React.Component {
     handleEvent(e){
         e.preventDefault();
@@ -34,7 +36,7 @@ export default class MarkHover extends React.Component {
                 onRequestClose={this.handleRequestClose.bind(this)}
                 onMouseOut={this.handleRequestClose.bind(this)}
             >
-                <div className='inner-mark-hover'>
+                <div className='inner-mark-hover' style={{maxWidth:markHoverMaxHeight}} id={`${this.props.ccType}:${this.props._id}`} >
                     {this.props.innerElement}
                 </div>
             </Popover>
@@ -53,7 +55,7 @@ export default class MarkHover extends React.Component {
 
 MarkHover.propTypes={
     ccType:React.PropTypes.oneOf(ccTypes).isRequired,
-    id:React.PropTypes.string.isRequired,
+    _id:React.PropTypes.string.isRequired,
     innerElement:React.PropTypes.node
 };
 

@@ -3,9 +3,7 @@ import MDToHTMLConverter from '../../markdown/MDToHTMLConverter.js';
 import ReactDOM from 'react-dom';
 import collaborativeContentsHovers from '../../markdown/collaborativeContentsHovers';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import getTheme from '../../conf/getTheme';
-import getMuiTheme from 'material-ui/styles/getMuiTheme';
-
+import { hoverMarkTheme } from '../../conf/themes';
 class RichMarkdownBlock extends React.Component {
     /**
      * Mount MarkHover to each marked element in the text.
@@ -19,8 +17,8 @@ class RichMarkdownBlock extends React.Component {
                 $($this).find(`span.react-mark-mount[data-ccType="${ccType}"][data-id="${id}"]`).each((index,el)=> {
                             this.states.elements.push(el);
                             ReactDOM.render(
-                                <MuiThemeProvider muiTheme={getMuiTheme()}>
-                                    <HoverComponent ccType={ccType} id={id}>
+                                <MuiThemeProvider muiTheme={hoverMarkTheme}>
+                                    <HoverComponent ccType={ccType} _id={id}>
                                         {$(el).text()}
                                     </HoverComponent>
                                 </MuiThemeProvider>

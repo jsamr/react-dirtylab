@@ -2,12 +2,13 @@ import React, {Component} from 'react';
 import CcDefinition from '../../api/CcDefinition'
 import { Meteor } from 'meteor/meteor';
 import { createContainer } from 'meteor/react-meteor-data';
-import CcDefinitionView from './../CcDefinitionView.jsx';
+import CcDefinitionView from '../CcDefinitionView.jsx';
 import {Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle} from 'material-ui/Toolbar';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
-import Readable from './../utils/Readable.jsx';
-import NavLink from './../routing/NavLink.jsx';
+import Readable from '../utils/Readable.jsx';
+import NavLink from '../routing/NavLink.jsx';
+import Main from '../Main.jsx';
 import { routes } from '../routing/AppRouter.jsx';
 
 class InnerDefinitionsPage extends Component {
@@ -30,11 +31,13 @@ class InnerDefinitionsPage extends Component {
                         </NavLink>
                     </ToolbarGroup>
                 </Toolbar>
-                <Readable>
-                    <div>
-                        {definitions}
-                    </div>
-                </Readable>
+                <Main>
+                    <Readable>
+                        <div>
+                            {definitions}
+                        </div>
+                    </Readable>
+                </Main>
             </div>
         )
     }
