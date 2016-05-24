@@ -4,9 +4,6 @@ import Route from 'route-parser';
 import NavEl from './NavEl.jsx';
 
 export default class NavLink extends NavEl {
-    constructor(props){
-        super(props);
-    }
     render() {
         return (
             <Link to={this.evalRoute.call(this)} {...this.props}>
