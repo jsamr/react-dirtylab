@@ -64,6 +64,8 @@ export const formTheme = buildTheme({
     clockCircleColor: fade(colors.darkBlack, 0.07),
     shadowColor: colors.fullBlack
 });
+const lightCcColor=clouds,
+      darkCcColor=colors.blueGrey600;
 
 /**
  *
@@ -71,11 +73,12 @@ export const formTheme = buildTheme({
  * @param {String=} color the font color
  * @returns {{background: (string), color: (string), hoverBackground: (string)}}
  */
-function buildCcTheme(background,color){
+function buildCcTheme(background){
     return {
-        background,
-        color,
-        hoverBackground:darken(background,0.2)
+        lightBackground:background,
+        lightColor:lightCcColor,
+        darkColor:darkCcColor,
+        darkBackground:darken(background,0.2)
     }
 }
 
@@ -84,10 +87,10 @@ function buildCcTheme(background,color){
  * @type {{def: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), ref: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), track: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), vision: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string})}}
  */
 export const ccThemes = {
-    def:buildCcTheme(colors.lime200,colors.blueGrey600),
-    ref:buildCcTheme(colors.greenA100,colors.blueGrey600),
-    track:buildCcTheme(colors.indigo900, colors.blueGrey600),
-    vision:buildCcTheme(colors.amber50, colors.blueGrey600)
+    def:buildCcTheme(colors.lime200),
+    ref:buildCcTheme(colors.greenA100),
+    track:buildCcTheme(colors.indigo900),
+    vision:buildCcTheme(colors.amber50)
 };
 
 

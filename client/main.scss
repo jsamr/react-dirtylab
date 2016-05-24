@@ -1,9 +1,4 @@
 
-$defBg: rgba(17, 232, 138, 0.55);
-$refBg: rgba(185, 177, 95, 0.84);
-$visionBg: rgba(80, 57, 244, 0.45);
-$trackBg: rgba(5, 98, 244, 0.3);
-
 .topBar {
     position:fixed;
 }
@@ -22,30 +17,6 @@ $trackBg: rgba(5, 98, 244, 0.3);
             border-radius: 3px;
             &:hover {
                 border:1px solid gray;
-            }
-        }
-        &.ext-def {
-            background-color: $defBg;
-            &.hovered {
-                background-color:darken($defBg,20);
-            }
-        }
-        &.ext-vision{
-            background-color: $visionBg;
-            &.hovered {
-                background-color:darken($visionBg,10);
-            }
-        }
-        &.ext-track{
-            background-color: $trackBg;
-            &.hovered {
-                background-color:darken($trackBg,20);
-            }
-        }
-        &.ext-ref{
-            background-color: $refBg;
-            &.hovered {
-                background-color:darken($refBg,10);
             }
         }
     }

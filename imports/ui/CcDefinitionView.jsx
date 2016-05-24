@@ -27,9 +27,9 @@ export default class CcDefinitionView extends Component {
                             title={this.props.ccDefinition.entry}
                             subtitle={`#${this.props.ccDefinition._id}`}
                             showExpandableButton={optionalDetailed!=null&&!this.props.forceExpand}
-                            style={Object.assign({padding:`${paddingVert}px ${paddingHorz}px`},ccThemes.def)}
-                            titleColor={ccThemes.def.color}
-                            subtitleColor={ccThemes.def.color}
+                            style={Object.assign({padding:`${paddingVert}px ${paddingHorz}px`},{background:ccThemes.def.lightBackground})}
+                            titleColor={ccThemes.def.darkColor}
+                            subtitleColor={ccThemes.def.darkColor}
                         />
                         <CardText
                             style={{padding:`${paddingVert}px ${paddingHorz}px`}}
@@ -46,7 +46,6 @@ export default class CcDefinitionView extends Component {
     }
 
     render(){
-        console.info(this.context);
         if(this.props.ccDefinition!==undefined) return this.renderIfDefined();
         else return this.renderIfUndefined();
     }
