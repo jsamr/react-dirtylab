@@ -1,10 +1,9 @@
 // check here for available colors http://www.material-ui.com/#/customization/colors
 import  * as colors  from 'material-ui/styles/colors';
-import {fade} from 'material-ui/utils/colorManipulator';
+import {fade, darken} from 'material-ui/utils/colorManipulator';
 import buildTheme from './theme-builder';
 import darkBaseTheme from 'material-ui/styles/baseThemes/darkBaseTheme';
 
-console.info(darkBaseTheme);
 // taken from http://www.materialui.co/flatuicolors
 const turquoise='#1abc9c',
       emerland='#2ecc71',
@@ -66,14 +65,29 @@ export const formTheme = buildTheme({
     shadowColor: colors.fullBlack
 });
 
+/**
+ *
+ * @param {String=} background the background color
+ * @param {String=} color the font color
+ * @returns {{background: (string), color: (string), hoverBackground: (string)}}
+ */
+function buildCcTheme(background,color){
+    return {
+        background,
+        color,
+        hoverBackground:darken(background,0.2)
+    }
+}
+
+/**
+ * An object containing styles for each collaborative content type
+ * @type {{def: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), ref: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), track: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string}), vision: ({background, color, hoverBackground}|{background: string, color: string, hoverBackground: string})}}
+ */
 export const ccThemes = {
-    def:{
-        background:colors.lime200,
-        color:colors.blueGrey600
-    },
-    ref:'',
-    track:'',
-    vision:''
+    def:buildCcTheme(colors.lime200,colors.blueGrey600),
+    ref:buildCcTheme(colors.greenA100,colors.blueGrey600),
+    track:buildCcTheme(colors.indigo900, colors.blueGrey600),
+    vision:buildCcTheme(colors.amber50, colors.blueGrey600)
 };
 
 

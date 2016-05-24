@@ -1,7 +1,7 @@
 // import from npm causes following bug :
 // 'console is not defined' when meteor loads it
 import showdown from './../lib/showdown';
-import markExtensions from './markExtensions'
+import { markExtensionArray } from './markExtensions'
 
 const showdownOpts={
     omitExtraWLInCodeBlocks:false,
@@ -34,14 +34,14 @@ export default class MDToHTMLConverter {
      * @param {String} [prefix] A string all header ids will be prefixed with.
      */
     constructor(prefix){
-        const extensions = markExtensions.map((ext)=>ext.bind(this));
+        const extensions = markExtensionArray.map((ext)=>ext.bind(this));
         const prefixHeaderId=prefix?`${prefix}~`:true;
         const options=Object.assign({},showdownOpts,{
             prefixHeaderId,
             extensions
         });
         this._converter=new showdown.Converter(options);
-        this.tokens=new Map(markExtensions.map((ext)=>[ext.ccType,new Set([])]));
+        this.tokens=new Map(markExtensionArray.map((ext)=>[ext.ccType, new Set([])]));
     }
 }
 

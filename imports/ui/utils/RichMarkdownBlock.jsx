@@ -11,7 +11,7 @@ class RichMarkdownBlock extends React.Component {
     mountHovers(){
         let $this = $(ReactDOM.findDOMNode(this));
         this._mDToHTMLConv.tokens.forEach((ids,ccType)=> {
-            let HoverComponent = collaborativeContentsHovers[ccType].markHover;
+            let HoverComponent = collaborativeContentsHovers.get(ccType).markHover;
             ids.forEach((id)=> {
                 //TODO Benchmark this selector
                 $($this).find(`span.react-mark-mount[data-ccType="${ccType}"][data-id="${id}"]`).each((index,el)=> {

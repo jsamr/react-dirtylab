@@ -8,7 +8,6 @@ export default class NavLink extends NavEl {
         super(props);
     }
     render() {
-        console.info(typeof this.evalRoute.call(this));
         return (
             <Link to={this.evalRoute.call(this)} {...this.props}>
                 {this.props.children}
